@@ -10,7 +10,12 @@ public class FixedThreadPool {
         ExecutorService exec = Executors.newFixedThreadPool(5);
         for (int i = 0; i < 50; i++) {
             exec.execute(new LiftOff());
+
         }
         exec.shutdown();
     }
+    //候娟娟她看着不爽，把库删了
+
+
+
 }
