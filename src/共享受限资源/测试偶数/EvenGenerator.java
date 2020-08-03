@@ -9,6 +9,7 @@ public class EvenGenerator extends IntGenerator {
     @Override
     public int next() {
         ++currentEvenValue;//问题点
+//        Thread.yield();//如果想更快的发现问题
         ++currentEvenValue;
         return currentEvenValue;
     }
