@@ -20,7 +20,7 @@ public class DeadlockingDiningPhilosophers {
         }
 
         for (int i = 0; i < size; i++) {
-            exec.execute(new Philosopher(sticks[i],sticks[(i+1)%size],i,ponder));
+            exec.execute(new Philosopher(sticks[i], sticks[(i + 1) % size], i, ponder));
         }
 
         System.out.println("Press 'Enter' to quit");
