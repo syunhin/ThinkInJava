@@ -14,7 +14,8 @@ public class Restaurant {
     ExecutorService exec = Executors.newCachedThreadPool();
     WaitPerson waitPerson = new WaitPerson(this);
     Chef chef = new Chef(this);
-    public Restaurant(){
+
+    public Restaurant() {
         exec.execute(chef);
         exec.execute(waitPerson);
     }
@@ -56,6 +57,7 @@ class WaitPerson implements Runnable {
                     }
                 }
                 System.out.println("Waitperson got " + restaurant.meal);
+                TimeUnit.MILLISECONDS.sleep(100);
                 synchronized (restaurant.chef) {
                     restaurant.meal = null;
                     restaurant.chef.notifyAll();
@@ -88,7 +90,7 @@ class Chef implements Runnable {
                         restaurant.exec.shutdownNow();
                     }
                     System.out.print("order up! ");
-                    synchronized (restaurant.waitPerson){
+                    synchronized (restaurant.waitPerson) {
                         restaurant.meal = new Meal(count);
                         restaurant.waitPerson.notifyAll();
                     }

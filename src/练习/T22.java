@@ -105,7 +105,7 @@ class V4 implements Runnable {
     public void run() {
         System.out.println("V4 start...");
         synchronized (flag) {
-            if (!flag.flag) {
+            while (!flag.flag) {
                 try {
                     System.out.println("V4 flag.wait()");
                     flag.wait();

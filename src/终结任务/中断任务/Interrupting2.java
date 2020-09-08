@@ -31,7 +31,6 @@ class BlockedMutex {
             System.out.println("Interrupted from lock acquisition in f()");
         }
     }
-
 }
 
 class Blocked2 implements Runnable {

@@ -50,7 +50,7 @@ public class HorseRace {
 
     public static void main(String[] args) {
         int nHorses = 7;
-        int pause = 200;
+        int pause = 10;
 
         new HorseRace(nHorses, pause);
     }
